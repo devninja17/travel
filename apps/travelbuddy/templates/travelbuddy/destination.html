@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destination</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'travelbuddy/css/destinationStyle.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <p id="links"><a href="/travels">Home</a> | <a id="links" href="/">Logout</a></p>
+        <div class="destination">
+            <h3>{{destination.destination}}</h3>
+            <p>Planned By: {{destination.user.name}}</p>
+            <p>Description: {{destination.description}}</p>
+            <p>Travel Date From: {{destination.travelDateFrom}}</p>
+            <p>Travel To Date: {{destination.travelDateTo}}</p>
+        </div>
+        <div class="joining">
+            <h3>Other users' joining the trip:</h3>
+            <ul>
+            {% for traveler in destination.travelers.all %}        
+                <li>{{traveler.name }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

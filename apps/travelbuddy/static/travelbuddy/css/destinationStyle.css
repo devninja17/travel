@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    width: 670px;
+    padding: 20px;
+}
+#links{
+    float: right;
+}
+.destination, .joining{
+    margin-top: 50px;
+}
+p{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+ul{
+    width: 200px;
+    margin-left: 30px;
+}
+

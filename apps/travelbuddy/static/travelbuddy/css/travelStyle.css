@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    width: 850px;
+    padding: 20px;
+    /* background-color: gray;  */
+}
+#logout, #addPlan{
+    float: right;
+}
+#addPlan{
+    margin-top: 20px;
+}
+.your_trip_schedules{
+    margin-top: 20px;
+    /* background-color: green; */
+}
+#name_column,#destination_column, #travel_start_date_column, #travel_end_date_column, #plan_column{
+    width: 170px;
+}
+th{
+    text-align: left;  
+}
+
+table{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 2px solid black;
+}
+
+.other_travel_plans{
+    margin-top: 40px;
+    /* background-color: green;  */
+}

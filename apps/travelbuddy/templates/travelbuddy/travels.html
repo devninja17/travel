@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travel Dashboard</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'travelbuddy/css/travelStyle.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <a id="logout" href="/logout">Logout</a>
+        <h3>Hello, {{request.session.user_name}}!</h3>
+        <div class="your_trip_schedules">
+            <h5>Your Trip Schedules</h5>
+            <table>
+                <tr>
+                    <th id="destination_column">Destination</th>
+                    <th id="travel_start_date_column">Travel Start Date</th>
+                    <th id="travel_end_date_column">Travel End Date</th>
+                    <th id="plan_column">Plan</th>
+                </tr>
+                {% for schedule in my_schedules %}
+                <tr>
+                    <td><a href="/travels/destination/{{schedule.id}}">{{schedule.destination}}</td>
+                    <td>{{schedule.travelDateFrom}}</td>
+                    <td>{{schedule.travelDateTo}}</td>
+                    <td>{{schedule.description}}</td>
+                </tr>
+                {% endfor %} 
+            </table>
+        </div>
+        <div class="other_travel_plans">
+            <h5>Other User's Travel Plans</h5>
+            <table>
+                <tr>
+                    <th id="name_column">Name</th>
+                    <th id="destination_column">Destination</th>
+                    <th id="travel_start_date_column">Travel Start Date</th>
+                    <th id="travel_end_date_column">Travel End Date</th>
+                    <th id="join_column">Do You Want to Join?</th>
+                </tr>
+                {% for schedule in other_schedules %}
+                <tr>
+                    <td>{{schedule.user.name}}</td>
+                    <td><a href="/travels/destination/{{schedule.id}}">{{schedule.destination}}</td>
+                    <td>{{schedule.travelDateFrom}}</td>
+                    <td>{{schedule.travelDateTo}}</td>
+                    <td><a href="/travels/join/{{schedule.id}}">Join</a></td>
+                </tr>
+                {% endfor %} 
+            </table>
+            <a id="addPlan" href="/travels/add">Add Travel Plan</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Plan</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'travelbuddy/css/addtripStyle.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <p id="links"><a href="/travels">Home</a> | <a id="links" href="/">Logout</a></p>
+        <h3>Add a Trip</h3>
+        <div class="addtrip">
+            <form action="/travels/add" method="POST">
+                {% csrf_token %}
+                <label>Destination:</label><input type="text" name="destination"><br>
+                <label>Description:</label><input type="text" name="description"><br>
+                <label>Travel Date From:</label><input type="date" name="travelDateFrom"><br>
+                <label>Travel Date To:</label><input type="date" name="travelDateTo"><br>
+                <input id="button" type="submit" value="Add">
+            </form> 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    width: 670px;
+    padding: 20px;
+}
+#links{
+    float: right;
+}
+.addtrip{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 400px;
+    padding: 20px;
+}
+label{
+    display: inline-block;
+    width: 130px;
+    margin-left: 5px;
+}
+input{
+    border: 1px solid black;
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 160px;
+}
+#button{
+    width: 65px;
+    margin-top: 15px;
+    margin-left: 240px;
+    box-shadow: 3px 3px 10px black;
+}
